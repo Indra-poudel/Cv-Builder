@@ -2,6 +2,10 @@
 
 Repo for  CV Builder.
 
+```
+This app generates a CV for you.
+
+
 ## Setup
 
 Make sure you have `node` installed and it is of version `>= 12.0`.
