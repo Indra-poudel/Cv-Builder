@@ -1,6 +1,6 @@
-# Minimal React js Starter
+# CV Builder
 
-Repo for  React js Starter.
+Repo for  CV Builder.
 
 ## Setup
 
