@@ -11,8 +11,8 @@ const Counter = (props: CounterProps) => {
   return (
     <div>
       <h2>{count}</h2>
-      <button onClick={() => changeCount(true)}>+</button>
-      <button onClick={() => changeCount(false)}>-</button>
+      <button onClick={() => changeCount(true)}>Increase</button>
+      <button onClick={() => changeCount(false)}>Decrease</button>
     </div>
   );
 };
