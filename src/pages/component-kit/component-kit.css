@@ -1,0 +1,6 @@
+.component_kit_wrapper {
+    padding: 20px;
+    background-color: #212121;
+    display: flex;
+    gap: 12px;
+}

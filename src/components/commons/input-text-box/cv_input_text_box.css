@@ -1,0 +1,67 @@
+.cv_input_text_box_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv_input_color_text_box_label {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.cv_input_text_box {
+  padding: 9px 12px;
+  outline: none;
+  background-color: #424242;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.cv_input_text_box:focus {
+  border: 0.8px solid #eeee;
+}
+
+.cv_input_text_box::placeholder {
+  color: #ccc;
+}
+
+/* ----------css for cv-input-text-box type color---------------- */
+
+.cv_input_text_box__ball {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-color: #e2e8f0;
+}
+
+.cv_input_color_text_box__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #424242;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.cv_input_color_text_box__wrapper_focus {
+  border: 1px solid #eeee;
+}
+
+.cv_input_color_text_box {
+  border: none;
+  outline: none;
+  background-color: #424242;
+  color: white;
+  outline: none;
+}
+
+.cv_input_color_text_box:focus {
+  border: none;
+  outline: none;
+}
+
+.cv_input_color_text_box::placeholder {
+  color: #ccc;
+}

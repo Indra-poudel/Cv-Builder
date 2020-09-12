@@ -1,3 +1,3 @@
 import Counter from './counter.component';
 
-export default Counter
+export default Counter;
