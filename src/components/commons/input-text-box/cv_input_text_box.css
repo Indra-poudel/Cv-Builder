@@ -23,7 +23,7 @@
 }
 
 .cv_input_text_box::placeholder {
-  color: #ccc;
+  color: rgba(252, 247, 247, 0.521);
 }
 
 /* ----------css for cv-input-text-box type color---------------- */
@@ -63,5 +63,29 @@
 }
 
 .cv_input_color_text_box::placeholder {
+  color: rgba(252, 247, 247, 0.521);
+}
+.cv_input_color_text_box_required_label {
+  color: #ff6347;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.cv_input_date_picker {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cv_input_date_picker > span {
+  color: white;
+  font-size: 12px;
+  padding-right: 24px;
+}
+
+.cv_input_date_picker_placeholder {
+  color: rgba(252, 247, 247, 0.521);
+}
+
+.cv_input_date_picker_icon {
   color: #ccc;
 }
