@@ -8,5 +8,6 @@
     padding: 50px 0;
     background-color: #212121;
     gap: 12px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }

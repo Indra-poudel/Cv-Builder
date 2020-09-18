@@ -31,16 +31,20 @@ function componentKit() {
       <hr />
 
       <div className="btn-kits">
-        <CvButtonHandler type={CV_BUTTON_TYPES.NORMAL} text={'Cancel'} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.NORMAL} text={'Delete'} color={CV_BUTTON_TYPES.RED} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.NORMAL} text={'Add Social Activity'} color={CV_BUTTON_TYPES.WHITE} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.ICON} text={'Add New'} color={CV_BUTTON_TYPES.WHITE} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.PRIMARY} label={'Cancel'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.WARNING} label={'Delete'} onClick={(e) => console.log(e)} />
         <CvButtonHandler
-          type={CV_BUTTON_TYPES.ICON}
-          text={'Ask Me'}
-          color={CV_BUTTON_TYPES.COLOR}
-          iconType={CV_BUTTON_TYPES.Email}
+          type={CV_BUTTON_TYPES.SECONDARY}
+          label={'Add Social Activity'}
+          onClick={(e) => console.log(e)}
         />
+        <CvButtonHandler type={CV_BUTTON_TYPES.ADD_NEW} label={'Add New'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.IMPORT} label={'Export'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.EXPORT} label={'Export'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.BUY_COFFEE} label={'Buy me a Coffee!'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.BUGS} label={'Raise an Issue'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.REACH_ME} label={'cv-builder.com'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.GITHUB} label={'GitHub Repo'} onClick={(e) => console.log(e)} />
       </div>
     </>
   );

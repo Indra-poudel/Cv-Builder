@@ -1,11 +1,12 @@
 export const CV_BUTTON_TYPES = {
-  NORMAL: 'Normal',
-  COLOR: 'Color',
-  RED: '#ec4646',
-  WHITE: 'white',
-  ICON: 'Icon',
-  IconAddNew: 'IconAddNew',
-
-  // examples icon
-  Email: '^^',
+  PRIMARY: 'Primary',
+  SECONDARY: 'Secondary',
+  WARNING: 'Warning',
+  ADD_NEW: 'AddNew',
+  IMPORT: 'Import',
+  EXPORT: 'Export',
+  BUY_COFFEE: 'Buy',
+  BUGS: 'Bugs',
+  REACH_ME: 'ReachMe',
+  GITHUB: 'Github',
 };

@@ -1,3 +1,3 @@
-import CV_Buttons from './cv_buttons';
+import CvButtons from './cv-buttons';
 
-export default CV_Buttons;
+export default CvButtons;
