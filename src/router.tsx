@@ -11,7 +11,7 @@ const Router: React.FC = () => {
       <Switch>
         <Route exact path={routes.ROOT} component={Home} />
         <Route path={routes.COMPONENT_KIT} component={ComponentKit} />
-        <Route path={routes.PAGE_NOT_FOUND} component={() => <div>PAGE_NOT_FOUND</div>} />
+        <Route path={routes.PAGE_NOT_FOUND} component={() => <ComponentKit />} />
         {/*TODO only enable component kit route for dev environment*/}
       </Switch>
     </BrowserRouter>
