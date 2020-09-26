@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useTranslation } from 'react-i18next';
 
@@ -6,7 +6,6 @@ import './cv_input_text_box.css';
 import { IMenuItems } from './types';
 import { formatDate } from 'src/utils/date';
 import 'react-datepicker/dist/react-datepicker.css';
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import { CV_INPUT_TEXT_BOX_TYPES } from 'src/constants/cv-input-text-box';
 
 interface CvInputTextBoxProps {
@@ -54,6 +53,12 @@ const CvInputTextBox: React.FC<CvInputTextBoxProps> = (props: CvInputTextBoxProp
 
   const onSelectMenu = (menuItem: IMenuItems) => {
     props.onChange(menuItem);
+    handleToggle();
+  };
+
+  const onSelectBoxInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    props.onChange(e.target.value);
+    setInputValue(e.target.value);
   };
 
   const InputField = () => {
@@ -132,7 +137,19 @@ const CvInputTextBox: React.FC<CvInputTextBoxProps> = (props: CvInputTextBoxProp
             )}
           </div>
         );
-
+      case CV_INPUT_TEXT_BOX_TYPES.DROP_DOWN:
+        return (
+          <select
+            onFocus={customTextBoxFocused}
+            onBlur={customTextBoxUnFocused}
+            name={props.name}
+            onChange={onSelectBoxInputChange}
+            className={isColorTextBoxFocused ? `cv_input_select_text_box focus` : `cv_input_select_text_box unfocus`}
+            placeholder={props.placeholder}>
+            <option disabled selected></option>
+            {props.menuItems && props.menuItems.map((option, index) => <option key={option.id}>{option.label}</option>)}
+          </select>
+        );
       default:
         return (
           <input

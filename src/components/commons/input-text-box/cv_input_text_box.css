@@ -146,3 +146,18 @@ a {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.37);
 }
+
+.cv_input_select_text_box {
+  padding: 9px 12px;
+  outline: none;
+  background-color: #424242;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.focus {
+  border: 1px solid #eeee;
+}
+.unfocus {
+  border: none;
+}

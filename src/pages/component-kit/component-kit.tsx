@@ -55,6 +55,11 @@ function componentKit() {
           menuItems={getMenuItems()}
           type={CV_INPUT_TEXT_BOX_TYPES.MENU}
         />
+        <CvInputHandler
+          onChange={(e) => console.log(e)}
+          menuItems={getMenuItems()}
+          type={CV_INPUT_TEXT_BOX_TYPES.DROP_DOWN}
+        />
       </div>
     </>
   );
