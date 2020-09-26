@@ -3,4 +3,7 @@ export const CV_INPUT_TEXT_BOX_TYPES = {
   COLOR: 'Color',
   TEXT_AREA: 'TextArea',
   DATE_PICKER: 'DATE_PICKER',
+  FILE_UPLOADER: 'FILE_UPLOADER',
+  DROP_DOWN: 'DROP_DOWN',
+  MENU: 'MENU',
 };
