@@ -1,10 +1,11 @@
 import React from 'react';
+import { FaBug, FaCoffee, FaExternalLinkAlt, FaFileExport, FaFileImport, FaPlus } from 'react-icons/fa';
 
 import './component-kit.css';
-import CvInputHandler from 'src/components/commons/input-text-box';
-import { CV_INPUT_TEXT_BOX_TYPES } from 'src/constants/cv-input-text-box';
 import CvButtonHandler from 'src/components/commons/Buttons';
 import { CV_BUTTON_TYPES } from 'src/constants/cv-buttons-box';
+import CvInputHandler from 'src/components/commons/input-text-box';
+import { CV_INPUT_TEXT_BOX_TYPES } from 'src/constants/cv-input-text-box';
 
 function componentKit() {
   return (
@@ -31,20 +32,15 @@ function componentKit() {
       <hr />
 
       <div className="btn-kits">
-        <CvButtonHandler type={CV_BUTTON_TYPES.PRIMARY} label={'Cancel'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.WARNING} label={'Delete'} onClick={(e) => console.log(e)} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.PRIMARY} label={'Cancel'} onClick={() => console.log('Click')} />
+        <CvButtonHandler type={CV_BUTTON_TYPES.WARNING} label={'Delete'} onClick={() => console.log('Click')} />
+
         <CvButtonHandler
           type={CV_BUTTON_TYPES.SECONDARY}
-          label={'Add Social Activity'}
-          onClick={(e) => console.log(e)}
+          icon={<FaBug />}
+          label={'GitHub Repo'}
+          onClick={() => console.log('Click')}
         />
-        <CvButtonHandler type={CV_BUTTON_TYPES.ADD_NEW} label={'Add New'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.IMPORT} label={'Export'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.EXPORT} label={'Export'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.BUY_COFFEE} label={'Buy me a Coffee!'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.BUGS} label={'Raise an Issue'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.REACH_ME} label={'cv-builder.com'} onClick={(e) => console.log(e)} />
-        <CvButtonHandler type={CV_BUTTON_TYPES.GITHUB} label={'GitHub Repo'} onClick={(e) => console.log(e)} />
       </div>
     </>
   );
