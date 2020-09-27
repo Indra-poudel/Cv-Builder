@@ -1,0 +1,42 @@
+.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;  
+}
+.normal-btn {
+    cursor: pointer;
+    padding: 6px 24px;
+    outline: none;
+    border: 0.8px solid #eeee;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+.normal {
+    background-color: #212121;
+    color: #fff;
+}
+.normal:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.btn-warning {
+    background: #ec4646;
+    color: #fff!important;
+}
+.btn-warning:hover {
+    background: #C53030!important;
+}
+.btn-secondary {
+    background: #fff;
+}
+
+.btn-secondary:hover {
+    background: rgb(221, 221, 221)!important;
+}
+
+/* styles for the buttons with icons.... */
+.normal-btn span{
+    margin-right: 12px;
+}
+.normal-btn .github-icon{
+    font-weight: 999;
+}
