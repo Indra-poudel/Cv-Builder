@@ -59,6 +59,7 @@ const CvInputTextBox: React.FC<CvInputTextBoxProps> = (props: CvInputTextBoxProp
   const onSelectBoxInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     props.onChange(e.target.value);
     setInputValue(e.target.value);
+    console.log(e.target.value);
   };
 
   const InputField = () => {
@@ -147,7 +148,13 @@ const CvInputTextBox: React.FC<CvInputTextBoxProps> = (props: CvInputTextBoxProp
             className={isColorTextBoxFocused ? `cv_input_select_text_box focus` : `cv_input_select_text_box unfocus`}
             placeholder={props.placeholder}>
             <option disabled selected></option>
-            {props.menuItems && props.menuItems.map((option, index) => <option key={option.id}>{option.label}</option>)}
+            {props.menuItems &&
+              props.menuItems.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {/* sending id as value such that we can access all the necessary info associated with id */}
+                  {option.label}
+                </option>
+              ))}
           </select>
         );
       default:
