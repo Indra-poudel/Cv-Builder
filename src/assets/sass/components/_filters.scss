@@ -1,0 +1,43 @@
+.filter-block {
+    margin-bottom: getSpacing("3x");
+}
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  &.user-filter{
+    .react-select__placeholder, .react-select__option, .react-select__value-container{
+      font-size: getFontSize('small') !important;
+    }
+  }
+  &.search-filter{
+    .react-select__control {
+      height: 44px;
+    }
+  }
+}
+.react-select__option--is-focused {
+  background-color: getColor('grey.10') !important;
+}
+.react-select__option--is-selected {
+  background-color: $primary-color !important;
+  color: $white !important;
+}
+.react-select__indicator-separator {
+  display: none;
+}
+.react-select__dropdown-indicator {
+  color: getColor('grey.50');
+}
+
+@include mqmax('md') {
+  .filter-group.user-filter {
+    > * {
+      width: calc(100%/3 - 8px);
+      flex: 0 0 calc(100% / 3 - 8px);
+      margin-bottom: getSpacing('2x');
+    }
+    > .btn {
+      justify-content: center;
+    }
+  }
+}

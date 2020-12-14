@@ -1,0 +1,13 @@
+.form {
+  & .row:last-child {
+    & .lf-input-wrap {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.react-select__control {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+

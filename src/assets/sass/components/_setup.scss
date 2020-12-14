@@ -1,0 +1,10 @@
+.block-setup {
+    margin-bottom: getSpacing("8x");
+  .fs-small-light {
+    margin: getSpacing("3x") 0;
+    color: getColor("grey.50");
+  }
+  .fs-small {
+    margin: getSpacing("3x") 0;
+  }
+}

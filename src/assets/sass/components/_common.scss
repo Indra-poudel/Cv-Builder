@@ -1,0 +1,90 @@
+.visibility__hidden {
+  visibility: hidden;
+}
+.visibility__shown {
+  visibility: visible;
+}
+.display__none {
+  display: none;
+}
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.flex_1 {
+  flex: 1;
+}
+.cursor-pointer {
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-color-light;
+  }
+}
+
+.cursor-hand {
+  cursor: pointer;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+// TODO: Need to make it common
+.cursor-pointer-navbar {
+  cursor: pointer;
+  &:hover {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+.icon-large {
+  font-size: getFontSize('large');
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.margin-auto {
+  margin: auto;
+}
+.icon-24 {
+  font-size: getFontSize('large');
+  height: 24px;
+}
+.icon-16 {
+  font-size: getFontSize('body2');
+  height: 16px;
+}
+.icon-delete {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.sort-icon {
+  display: flex;
+  flex-direction: column;
+  &-active {
+    color: getColor('grey.50');
+  }
+  &-disable {
+    color: getColor('grey.20');
+  }
+  &-top {
+    margin-bottom: -7px;
+  }
+  &-bottom {
+    margin-top: -7px;
+  }
+}

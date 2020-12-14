@@ -1,0 +1,123 @@
+.search-bar {
+    display: flex;
+    padding-bottom: getSpacing("4x");
+    .input-wrap {
+        flex: 1;
+    }
+}
+.search-filter-input {
+  width: 245px;
+}
+.contact-card {
+  .contact-list {
+    width: 80%;
+    .contact-info {
+      padding-left: getSpacing("8x");
+      padding-bottom: getSpacing("8x");
+      position: relative;
+      span {
+        display: block;
+      }
+      .c-name {
+        color: $grey-dark;
+        font-size: getFontSize("body1");
+        font-weight: getFontWeight("bold");
+      }
+      .c-email {
+        color: getColor("grey.50");
+        font-size: getFontSize("small");
+        font-weight: getFontWeight("medium");
+      }
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: 'Material Icons';
+        content: "person_outline";
+        font-size: getFontSize("large");
+      }
+    }
+    .contact-date {
+      padding-left: getSpacing("8x");
+      position: relative;
+      span {
+        display: block;
+      }
+      .c-last {
+        color: getColor("grey.50");
+        font-size: getFontSize("small");
+        font-weight: getFontWeight("medium");
+      }
+      .c-time {
+        color: $grey-dark;
+        font-size: getFontSize("small");
+        font-weight: getFontWeight("medium");
+      }
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: 'Material Icons';
+        content: "event";
+        font-size: getFontSize("body2");
+        color: $grey-light;
+      }
+    }
+  }
+  .contact-icon {
+    color: getColor("primary.base");
+    font-size: 16px;
+  }
+  .contact-details {
+    display: flex;
+    font-size: getFontSize("small");
+    color: getColor("grey.50");
+    font-weight: getFontWeight("medium");
+    li {
+      margin-right: getSpacing("3x");
+    }
+    .c-contact {
+      position: relative;
+      padding-left: getSpacing("5x");
+      &:before {
+        position: absolute;
+        left: 0;
+        top: -1px;
+        font-family: 'Material Icons';
+        content: "restore";
+        font-size: getFontSize("body2");
+        color: getColor("grey.50");
+      }
+    }
+    .c-reply {
+      position: relative;
+      padding-left: getSpacing("5x");
+      margin-right: 0;
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: 'Material Icons';
+        content: "chat_bubble_outline";
+        font-size: getFontSize("body2");
+        color: $grey-base;
+      }
+    }
+  }
+  .contact-attachments {
+    position: relative;
+    padding-left: getSpacing("4x");
+    font-size: getFontSize("small");
+    color: $grey-base;
+    font-weight: getFontWeight("medium");
+    &:before {
+      position: absolute;
+      left: 0;
+      top: -2px;
+      font-family: 'Material Icons';
+      content: "attach_file";
+      font-size: getFontSize("body2");
+      color: getColor("secondary.base");
+    }
+  }
+}

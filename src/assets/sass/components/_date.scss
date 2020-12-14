@@ -1,0 +1,89 @@
+// override for react-dates library
+.DateInput {
+  width: 110px !important;
+  background-color: transparent;
+  .usage-report-page &{
+    width: 120px !important;
+  }
+}
+
+.DateRangePickerInput {
+  border-radius: $input-border-radius !important;
+}
+
+.DateRangePickerInput__withBorder {
+  border: 1px solid #d2d2d2 !important;
+}
+
+.DateInput_input__focused {
+  border-bottom: 1px solid $primary-color !important;
+}
+
+.DateInput_input {
+  font-weight: normal !important;
+  text-align: center;
+  font-size: getFontSize('body2') !important;
+  background-color: transparent !important;
+  color: getColor('grey.40') !important;
+  padding: 0.6em getSpacing('2x') 0.4em !important;
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: getColor('grey.40');
+    opacity: 1; /* Firefox */
+  }
+  
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: getColor('grey.40');
+  }
+  
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: getColor('grey.40');
+  }
+  .DateRangePickerInput__showClearDates &{
+    color: getColor('grey.80') !important;
+  }
+}
+.DateRangePickerInput_arrow {
+  color: getColor('grey.40');
+  display: inline-flex;
+  align-items: center;
+}
+
+.DateRangePickerInput_clearDates,
+.DateRangePickerInput_calendarIcon {
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  color: getColor('grey.50');
+}
+
+.CalendarDay__default {
+  &:hover{
+    // border-color: $primary-color;
+  }
+}
+.CalendarDay__selected {
+  background: $primary-color-dark;
+  border-color: $primary-color-dark;
+  &:hover,
+  &:active {
+    background-color: $primary-color !important;
+    border-color: $primary-color-dark;
+  }
+}
+
+.CalendarDay__selected_span {
+  background-color: $primary-color-dark;
+  border-color: $primary-color-dark;
+  &:hover {
+    background-color: $primary-color !important;
+    border-color: $primary-color-dark;
+  }
+}
+
+.CalendarDay__hovered_span {
+  background-color: $primary-color-light;
+
+  &:hover {
+    background-color: $primary-color-light !important;
+  }
+}

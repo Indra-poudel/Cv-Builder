@@ -1,0 +1,139 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+  .ReactVirtualized__Table__headerRow {
+    border-bottom: 1px solid $grey-lighter;
+    text-align: left;
+    border-top: 1px solid $grey-lighter;
+    background: $white !important;
+  }
+  .ReactVirtualized__Table__Grid:focus {
+    outline: none;
+  }
+  .ReactVirtualized__Table__sortableHeaderColumn:focus {
+    outline: none;
+  }
+  .error-text {
+    color: $error-color;
+    font-weight: getFontWeight('medium');
+  }
+  @include e(head-row) {
+    border-bottom: 1px solid $grey-lighter;
+    text-align: left;
+    .table__col {
+      border-top: 1px solid $grey-lighter;
+    }
+  }
+  @include e(row) {
+    cursor: pointer;
+    background: $white;
+    &:nth-child(odd) {
+      background: $white;
+    }
+  }
+  @include e(col) {
+    padding: getSpacing('4x') getSpacing('4x');
+    @include getFontSize('small');
+    color: getColor('grey.80');
+    border-bottom: 1px solid $grey-lighter;
+    @include m(head) {
+      padding: getSpacing('4x');
+      font-weight: getFontWeight('semibold');
+    }
+  }
+  .empty-table {
+    display: flex;
+    flex-direction: column;
+    min-height: 30vh;
+    align-items: center;
+    justify-content: center;
+    color: getColor('grey.50');
+    h3 {
+      margin-bottom: getSpacing('2x');
+    }
+    p {
+      margin-bottom: getSpacing('2x');
+    }
+  }
+  .inactive {
+    &:after {
+      padding-left: getSpacing('1x');
+      content: "(inactive)";
+      color: $grey-base;
+    }
+  }
+  .suppressed {
+    &:after {
+      padding-left: getSpacing('1x');
+      content: "🖐";
+      color: $grey-base;
+    }
+  }
+  .error {
+    color: $error-color;
+    font-weight:  getFontWeight("medium")
+  }
+  .both {
+    position: relative;
+    &:after {
+      padding-left: getSpacing('1x');
+      content: "(inactive)";
+      color: $grey-base;
+      padding-right: 15px;
+    }
+    &:before {
+      position: absolute;
+      right: 0;
+      padding-left: getSpacing('1x');
+      content: "🖐";
+      color: $grey-base;
+    }
+  }
+  &-email {
+    .table__row {
+      background: $white;
+      &:nth-child(1) {
+        border-top: 1px solid $grey-lighter;
+      }
+    }
+  }
+}
+.table-error {
+  .table__head-row {
+    .table__col {
+      border-top: 0;
+    }
+  }
+  .table__row {
+    .table__col {
+      color: $error-color;
+      text-align: left;
+    }
+  }
+}
+//Override React Virtulalized table to show tooltip 
+.ReactVirtualized__Grid__innerScrollContainer {
+  overflow: initial !important;
+}
+.ReactVirtualized__Table__row {
+  overflow: initial !important;
+  &:hover {
+    background-color: $bg-color;
+  }
+}
+.ReactVirtualized__Table__rowColumn.primary {
+  overflow: initial !important;
+}
+.ReactVirtualized__Table__rowColumn {
+  white-space: normal;
+}
+.td-username {
+  display: inline-block;
+  width: 80%;
+}
+
+.td-supervisor{
+  display: inline-block;
+  width: 80%;
+  color: $grey-dark;
+}

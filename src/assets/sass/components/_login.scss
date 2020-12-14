@@ -1,0 +1,54 @@
+.tile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.tile {
+    width: 550px;
+    margin: 0 auto;
+    @include e(header) {
+      text-align: center;
+      margin-bottom: getSpacing("8x");
+      .login-title {
+        display: block;
+        font-size: getFontSize("body2");
+        margin: getSpacing("4x") 0 getSpacing("8x");
+        color: $grey-dark;
+      }
+      @include m(card) {
+        padding: 70px;
+        border: 1px solid getColor("grey.20");
+        border-radius: 4px;
+        background-color: $white;
+        //box-shadow: $box-shadow;
+      }
+      .logo {
+        margin-bottom: getSpacing("8x");
+        img {
+          width: 150px;
+        }
+      }
+    }
+    @include e(form) {
+        text-align: left;
+        .form-group {
+            .btn--icon {
+                font-size: 13px;
+                padding: 14px 24px;
+                img {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    .h-seperator {
+        margin-bottom: getSpacing("8x");
+    }
+}
+.btn--google {
+  padding: getSpacing("3x") getSpacing("2x") !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}

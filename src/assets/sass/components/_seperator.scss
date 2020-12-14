@@ -1,0 +1,41 @@
+.h-seperator {
+    .line-auto {
+        margin-top: auto!important;
+        margin-bottom: auto!important;
+        flex-grow: 1;
+        border: 0;
+        border-top: 1px solid $grey-light;
+    }
+    .text {
+        padding: getSpacing("2x") getSpacing("3x");
+        color: getColor("grey.50");
+        font-size: getFontSize("small");
+        font-weight:  getFontWeight("bold");
+    }
+}
+.seperator {
+  .background {
+    display: block;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    &:before {
+      border-top: 1px solid $grey-light;
+      content: "";
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+    }
+    span { 
+        background: $white; 
+        padding: 0 15px; 
+        color: getColor("grey.50");
+        font-size: getFontSize("small");
+    }
+  }
+}

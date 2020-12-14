@@ -1,0 +1,36 @@
+.fs-small {
+  font-size: getFontSize('small');
+}
+.txt-bold {
+  font-weight: bold;
+}
+.text-light {
+  color: getColor('grey.50');
+  font-size: getFontSize('body2');
+}
+.text-light-sm {
+  color: getColor('grey.50');
+  font-size: getFontSize('small');
+}
+
+.txt-primary-color {
+  color: getColor('primary.base');
+}
+
+.link-primary {
+  color: getColor('primary.base');
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.link-cursor {
+  color: getColor('primary.base');
+  cursor: pointer;
+}
+
+.nav-link {
+  cursor: pointer;
+  & :hover {
+    color: getColor('primary.base');
+  }
+}

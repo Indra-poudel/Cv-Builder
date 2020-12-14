@@ -1,0 +1,57 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  .tooltip-text {
+    visibility: hidden;
+    height: fit-content;
+    background-color: getColor('grey.80');
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: normal;
+  }
+
+  .tooltip-arrow {
+    position: absolute;
+    visibility: hidden;
+    top: calc(100%);
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent getColor('grey.80') transparent;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+
+  &:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  &:hover .tooltip-arrow {
+    visibility: visible;
+    opacity: 1;
+  }
+  &.tooltip-left {
+    .tooltip-text {
+      left: calc(0em - 45px);
+      top: -20%;
+    }
+    .tooltip-arrow {
+      top: calc(100% - 16px);
+      left: 0;
+      transform: translateX(-30%);
+      border-color: transparent transparent transparent getColor('grey.80');
+    }
+  }
+}

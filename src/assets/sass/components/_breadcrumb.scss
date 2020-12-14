@@ -1,0 +1,12 @@
+.breadcrumb {
+  display: flex;
+  font-size: getFontSize("small");
+  color: getColor("grey.50");
+  @include e(item) {
+    display: inline-flex;
+    align-items: center;
+      svg {
+        margin: 0 getSpacing("2x");
+      }
+    }
+}

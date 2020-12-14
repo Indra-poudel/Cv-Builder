@@ -1,0 +1,28 @@
+.account-block {
+    .row {
+        align-items: center;
+        border-bottom: 0;
+    }
+    .col-value {
+        display: flex;
+        flex-direction: column;
+    }
+    .text-light-sm {
+        font-weight: getFontWeight("normal");
+    }
+    .row-disabled {
+        opacity: 0.5;
+        pointer-events:none;
+    }
+    .col-last {
+        padding: 0;
+        text-align: left;
+    }
+    .outlook {
+        width: 18px;
+    }
+    .integration-icon {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}

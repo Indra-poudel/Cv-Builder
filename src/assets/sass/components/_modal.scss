@@ -1,0 +1,150 @@
+.modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background-color: getColor("white.base");
+  padding: 0;
+  max-width: 960px;
+  width: 95%;
+  border-radius: getSpacing("1x");
+  border: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  max-height: 95vh;
+  overflow: auto;
+}
+
+.modal {
+  @include e(header) {
+    padding: getSpacing("5x") getSpacing("6x");
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include m(border) {
+      border-bottom: 1px solid $grey-light;
+    }
+  }
+
+  @include e(body) {
+    max-height: calc(100% - 150px);
+    text-align: center;
+    .modal-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: getSpacing("8x") 0;
+      @include e(title) {
+        font-size: getFontSize("large");
+      }
+      @include e(subtitle) {
+        font-size: getFontSize("body1");
+      }
+      @include m(sm) {
+        padding-left: getSpacing("20x");
+        padding-right: getSpacing("20x");
+      }
+    }
+    .info-block {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      font-size: getFontSize("small");
+      color: getColor("grey.50");
+    }
+    @include e(icon) {
+      color: $grey-base;
+    }
+    @include e(icon) {
+      font-size: 86px;
+      @include m(success) {
+        color: #20C933;
+      }
+      @include m(fail) {
+        color: #F82B60;
+      }
+    }
+  }
+
+  @include e(footer) {
+    padding: getSpacing("5x") getSpacing("12x");
+    display: flex;
+    text-align: center;
+    font-size: getFontSize("small");
+    color: getColor("grey.50");
+
+    @include m(border) {
+      border-top: 1px solid getColor("grey.15");
+    }
+  }
+
+  @include e(close-icon) {
+    color: $grey-dark;
+    cursor: pointer;
+    font-size: getFontSize("large");
+    text-align: right;
+    &:hover{
+    color: $primary-color;
+    }
+  }
+  @include m(sm) {
+    width: 553px;
+    .modal__body {
+      height: 80%;
+      padding: getSpacing("5x");
+      .modal-block {
+        margin: 0;
+      }
+    }
+  }
+  @include m(auto) {
+    width: 553px;
+    height: auto;
+    .modal__body {
+      height: 80%;
+      padding: getSpacing("5x");
+      .modal-block {
+        margin: 0;
+      }
+    }
+  }
+  &--auto {
+    width: 100%;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+@include mqmax('md') {
+  .ReactModal__Content {
+    width: 95%;
+    .modal--sm {
+      width: 100%;
+    }
+    .component__adduserdialog {
+      width: auto;
+    }
+  }
+}
+
+.modal-body-scroll {
+  overflow-y: auto;
+  max-height: calc(100vh - 300px);
+}

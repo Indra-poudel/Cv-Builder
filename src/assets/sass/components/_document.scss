@@ -1,0 +1,94 @@
+.document-card {
+  height: 205px;
+    .card__content{
+      overflow: visible;
+    }
+    .document-list {
+      width: 80%;
+      .document-info {
+        padding-left: getSpacing("8x");
+        padding-bottom: getSpacing("4x");
+        position: relative;
+        span {
+          display: block;
+        }
+        .c-name {
+          color: $grey-dark;
+          font-size: getFontSize("body1");
+          font-weight: getFontWeight("bold");
+        }
+        .c-sub {
+          color: getColor("grey.50");
+          font-size: getFontSize("small");
+          font-weight: getFontWeight("medium");
+          
+          span{
+              display: inline;
+          }
+        }
+        .document-info-icon {
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-family: 'Material Icons';
+          font-size: getFontSize("large");
+        }
+      }
+      .document-person {
+        padding-bottom: getSpacing("2x");
+        padding-top: getSpacing("2x");
+        position: relative;
+
+        .c-last {
+            color: $grey-dark;
+          font-size: getFontSize("small");
+          font-weight: getFontWeight("medium");
+        }
+        
+      }
+      .document-reciever {
+        padding-top: getSpacing("2x");
+        padding-bottom: getSpacing("2x");
+        
+        position: relative;
+
+        .c-last {
+            color: $grey-dark;
+          font-size: getFontSize("small");
+          font-weight: getFontWeight("medium");
+        }
+        .c-time {
+          color: $grey-dark;
+          cursor: pointer;
+          font-size: getFontSize("small");
+          font-weight: getFontWeight("medium");
+          color: $primary-color;
+          padding: 0;
+        }
+      }
+      .document-domain {
+        padding-bottom: getSpacing("2x");
+        padding-top: getSpacing("2x");
+        position: relative;
+        font-size: getFontSize('small');
+        
+      }
+    }
+    .document-icon {
+      color: $grey-base;
+      font-size: 16px;
+      width: 17%;
+      display: flex;
+      justify-content: space-between;
+
+      .tooltip{
+        align-self: flex-start;
+      }
+    }
+    
+    .document-item-icon {
+      color: $grey-light;
+      font-size: getFontSize("body2");
+    }
+  }
+

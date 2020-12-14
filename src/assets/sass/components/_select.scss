@@ -1,0 +1,23 @@
+//custom class for react-select
+.react-select {
+  @include e(control) {
+    border: 1px solid getColor('grey.20') !important;
+    border-radius: $input-border-radius !important;
+    padding: 0.2rem 0.2rem;
+    font-size: getFontSize('body2');
+    background-color: getColor('white.base');
+    color: getColor('grey.80');
+    &--is-focused {
+      border: 1px solid $primary-color !important;
+      box-shadow: 0 0 0 0 !important;
+      outline: none;
+    }
+  }
+  @include e(placeholder){
+    font-size: getFontSize("body2") !important;
+    color: getColor("grey.40") !important;
+  }
+  @include e(indicators){
+    display: none;
+  }
+}

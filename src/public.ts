@@ -1,5 +1,9 @@
 import 'src/i18n';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-virtualized/styles.css';
 
-// import 'shards-ui/dist/css/shards.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+
+import 'react-dates/initialize';
+
+import 'react-dates/lib/css/_datepicker.css';

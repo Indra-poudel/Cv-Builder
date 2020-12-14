@@ -1,0 +1,44 @@
+.content-wrap {
+  // margin: getSpacing("8x") 0;
+  .page-heading {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: getSpacing("8x");
+    @include e(right) {
+      display: flex;
+    }
+  }
+  .content-7x {
+    width: 70%;
+  }
+  .content-center {
+    margin: 0 auto;
+    padding-top: getSpacing("6x");
+    max-width: 813px;
+    width: 100%;
+  }
+  .content-right{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: getSpacing("8x");
+  }
+}
+
+//demo css
+
+.demo-path {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  max-width: 120px;
+  a {
+    padding: getSpacing("3x");
+    display: block;
+  }
+}
+
+.highlight{
+  background-color: getColor('tertiary-yellow.20');
+}
+

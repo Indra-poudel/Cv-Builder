@@ -1,0 +1,114 @@
+.lf-toast {
+  background-color: getColor("tertiary-green.60");
+  color: getColor("white.base");
+  padding: getSpacing("3x") getSpacing("5x");
+  display: flex;
+  align-items: center;
+
+  @include m(danger) {
+    background-color: getColor("tertiary-red.60");
+  }
+
+  @include m(warning) {
+    background-color: getColor("tertiary-yellow.60");
+  }
+
+  @include e(content) {
+    margin-left: getSpacing("4x");
+    text-align: left;
+  }
+
+  @include e(icon) {
+    line-height: 0;
+  }
+
+  @include e(title) {
+    @include getFontSize("body2");
+    font-weight: getFontWeight("bold");
+    margin-bottom: getSpacing("1x");
+    text-transform: capitalize;
+    line-height: 1.5;
+  }
+
+  @include e(message) {
+    @include getFontSize("body1");
+    line-height: 1.2;
+  }
+
+  @include e(container) {
+    padding: 0;
+
+    & .Toastify__toast {
+      padding: 0;
+    }
+
+    & .lf-toast__progress-bar {
+      background: getColor("white.base");
+    }
+
+    & .Toastify__toast-body {
+      margin: 0;
+    }
+  }
+}
+
+
+// for toast
+
+
+.Toastify__toast-body {
+  background-color: #fefbee;
+}
+
+.Toastify__toast {
+  padding: 10px 8px 10px 20px;
+  background-color: #fefbee;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  &-container {
+    width: 350px;
+  }
+}
+.Toastify__close-button--default {
+  color: $grey-dark;
+  opacity: 1;
+}
+
+.Toast__Success {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: $grey-dark;
+}
+
+.Toast__Failure {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: $grey-dark;
+  padding-bottom: 10px;
+}
+
+.Toast__Failure > div {
+  display: flex;
+  margin-left: 17px;
+  flex-direction: column;
+}
+
+.Toast__Failure > div > label {
+  margin-top: 5px;
+  color: #8b46ff;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.Toast__Success > span {
+  margin-left: 17px;
+}

@@ -1,0 +1,56 @@
+.ellipse-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ellipse {
+  height: 56px;
+  width: 56px;
+  border-radius: 100%;
+  border: 1px solid getColor("grey.40");
+  @include getHeaderFontSize("h4");
+  color: transparentize(getColor("black.base"), 0.2);
+  padding: getSpacing("1x");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparentize(getColor("grey.40"), 0.8);
+
+  @include m(red) {
+    border-color: getColor("tertiary-red.60");
+    background-color: transparentize(getColor("tertiary-red.60"), 0.8);
+  }
+
+  @include m(orange) {
+    border-color: getColor("orange.base");
+    background-color: transparentize(getColor("orange.base"), 0.8);
+  }
+
+  @include m(yellow) {
+    border-color: getColor("tertiary-yellow.20");
+    background-color: transparentize(getColor("tertiary-yellow.20"), 0.8);
+  }
+
+  @include m(blue) {
+    border-color: getColor("tertiary-blue.40");
+    background-color: transparentize(getColor("tertiary-blue.40"), 0.8);
+  }
+
+  @include m(purple) {
+    border-color: getColor("purple.base");
+    background-color: transparentize(getColor("purple.base"), 0.8);
+  }
+
+  @include m(green) {
+    border-color: getColor("tertiary-green.60");
+    background-color: transparentize(getColor("tertiary-green.60"), 0.8);
+  }
+
+  @include e(label) {
+    font-size: getFontSize("small");
+    color: transparentize(getColor("black.base"), 0.2);
+    margin-top: getSpacing("2x");
+  }
+}

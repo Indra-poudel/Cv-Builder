@@ -1,0 +1,354 @@
+/* Button Defaults */
+%btn-default {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  font-weight: getFontWeight("semibold");
+  flex-shrink: 0;
+  &:active {
+    transform: scale(0.98);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+/* Mixin to define button size
+//
+// Parameters:
+// --> $height: Any CSS Size
+// --> $padding: Any CSS Size
+// --> $font-size: Any CSS Size
+//
+*/
+@mixin btn-size(
+  $padding: get("regular.spacing", $btn-size),
+  $font-size: get("regular.font-size", $btn-size)
+) {
+  padding: $padding;
+  font-size: $font-size;
+}
+
+/* Mixin to define button color
+//
+// Parameters:
+// --> $bgColorKey: Any CSS Color
+// --> $textColorKey: Any CSS Color
+// --> $outlined: Boolean
+//
+*/
+@mixin btn-color(
+  $bgColorKey: null,
+  $textColorKey: null,
+  $outlined: null,
+  $borderColorKey: null,
+  $customTextKey: null
+) {
+  @if ($outlined == null or $outlined == false) {
+    background-color: $bgColorKey;
+    border-color: $borderColorKey;
+    @if ($customTextKey == null) {
+      color: $textColorKey;
+    } @else {
+      color: $customTextKey;
+    }
+  } @else {
+    background-color: $white;
+    border-color: $borderColorKey;
+    @if ($customTextKey == null) {
+      color: $textColorKey;
+    } @else {
+      color: $customTextKey;
+    }
+  }
+}
+
+/* Mixin to define button hover color
+//
+// Parameters:
+// --> $bgColorKey: Any CSS Color
+// --> $textColorKey: Any CSS Color
+//
+*/
+@mixin btn-hover($bgColorKey: null, $textColorKey: null) {
+  &:hover {
+    background-color: $bgColorKey;
+    color: $textColorKey;
+  }
+}
+
+/* Mixin to define button hover color
+//
+// Parameters:
+// --> $border-radius: Border radius as in CSS
+//
+*/
+@mixin btn-roundness($border-radius: null) {
+  border-radius: $border-radius;
+}
+
+/* Parent Mixin that generates button related classes
+//
+// Parent Class: 
+// --> btn
+//
+// Modifiers:
+// --> variant ("primary", "secondary") or as per defined in $btn-variant Map
+//       ## Usage:
+//       btn--primary, btn--secondary
+//       ## For outlined buttons:
+//       btn--outlined--primary, btn--outlined--secondary
+//
+// --> size ("small", "regular", "large") or as per defined in $btn-size Map
+//       ## Usage:
+//       btn--small, btn-regular, btn-large
+//
+// --> rounded : defines if button has rounded button
+//       ## Usage:
+//       btn--rounded
+*/
+@mixin btn-maker($class: "btn", $font-weight: null, $rounded: null) {
+  .#{$class} {
+    //button defaults
+    @extend %btn-default;
+    //default button height and padding (ie. Regular size)
+    @include btn-size;
+
+    @if ($font-weight) {
+      font-weight: getFontWeight("bold");
+    }
+
+    @include e(icon) {
+      width: 16px;
+      height: auto;
+      line-height: 1;
+      @include m(left) {
+        margin-right: getSpacing("2x");
+      }
+      @include m(right) {
+        margin-left: getSpacing("2x");
+      }
+    }
+    @include e(with-icon) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: 16px;
+      @include m(lg) {
+        width: 48px;
+        height: 48px;
+      }
+      @include m(sm) {
+        width: 32px;
+        height: 32px;
+      }
+      @include m(xs) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @include m(full-width){
+      width: 100%;
+    }
+
+    //generates modifier for button size
+    @each $name, $map in $btn-size {
+      @include m($name) {
+        @include btn-size(
+          $padding: get("spacing", $map),
+          $font-size: get("font-size", $map)
+        );
+      }
+    }
+
+    //generates modifier for button variants
+    @each $type, $map in $component-color-variants {
+      @include m(shadowed) {
+        &-#{$type} {
+          box-shadow: 0px 4px 14px rgba(get("bg-color", $map), 0.15);
+        }
+      }
+      @include m($type) {
+        @if not map-has-key($map, "text-color") {
+          @include btn-color(
+            $bgColorKey: get("bg-color", $map),
+            $borderColorKey: get("border-color", $map),
+            $textColorKey: $btn-base-text-color
+          );
+        } @else {
+          @include btn-color(
+            $bgColorKey: get("bg-color", $map),
+            $borderColorKey: get("border-color", $map),
+            $textColorKey: get("text-color", $map)
+          );
+        }
+        @if not map-has-key($map, "hover-text-color") {
+          @include btn-hover(
+            $bgColorKey: get("hover-color", $map),
+            $textColorKey: $btn-base-text-color
+          );
+        } @else {
+          @include btn-hover(
+            $bgColorKey: get("hover-color", $map),
+            $textColorKey: get("hover-text-color", $map)
+          );
+        }
+      }
+      @include m(outlined) {
+        &-#{$type} {
+          @if not map-has-key($map, "text-color") {
+            @include btn-color(
+              $bgColorKey: get("bg-color", $map),
+              $textColorKey: get("outline-text-color", $map),
+              $borderColorKey: get("border-color", $map),
+              $outlined: true
+            );
+          } @else {
+            @include btn-color(
+              $bgColorKey: get("bg-color", $map),
+              $textColorKey: get("text-color", $map),
+              $borderColorKey: get("border-color", $map),
+              $outlined: true
+            );
+          }
+
+          @if not map-has-key($map, "hover-text-color") {
+            @include btn-hover(
+              $bgColorKey: get("hover-color", $map),
+              $textColorKey: $btn-base-text-color
+            );
+          } @else {
+            @include btn-hover(
+              $bgColorKey: get("hover-color", $map),
+              $textColorKey: get("hover-text-color", $map)
+            );
+          }
+        }
+      }
+      @include m(text) {
+        &-#{$type} {
+          @include btn-color(
+            $bgColorKey: transparent,
+            $textColorKey: get("bg-color", $map)
+          );
+          @if not map-has-key($map, "hover-text-color") {
+            @include btn-hover(
+              $bgColorKey: get("hover-color", $map),
+              $textColorKey: $btn-base-text-color
+            );
+          } @else {
+            @include btn-hover(
+              $bgColorKey: get("hover-color", $map),
+              $textColorKey: get("hover-text-color", $map)
+            );
+          }
+        }
+      }
+    }
+
+    //generates modifier for roundness of button
+    @if ($rounded == true) {
+      @include btn-roundness($btn-roundness);
+    }
+
+    @include m(block) {
+      width: 100%;
+      justify-content: center;
+    }
+    @include m(loading) {
+      img {
+        width: 20px;
+        margin-right: getSpacing("1x");
+        color: $white;
+      }
+    }
+  }
+}
+// Button group
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn-dropdown {
+  position: relative;
+  z-index: 1;
+  @include e(submenu){
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 244px;
+    padding: getSpacing("2x");
+    background: $white;
+    box-shadow: $box-shadow;
+    z-index: 2;
+    font-weight: 400;
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #9194A1;
+      .submenu-link {
+        padding: getSpacing("2x");
+        color: #9194A1;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: 16px;
+      padding: 4px;
+      background: #fff;
+      border: solid 0px #999;
+      border-right: none;
+      border-bottom: none;
+      transform: rotate(45deg);
+      box-shadow: $box-shadow;
+      z-index: 0;
+    }
+  }
+
+  &:hover {
+    .btn-dropdown__submenu {
+      display: block;
+      z-index: 2;
+    }
+  }
+}
+
+.btn-user-download {
+  .icon-download, .icon-caret-down {
+    font-size: 16px;
+  }
+}
+.btn-dropdown__submenu {
+  li {
+    &:hover {
+      background-color: $bg-color;
+      color: $primary-color;
+      font-weight: 500;
+      .submenu-link {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.btn-status {
+  display: inline-flex;
+  align-items: center;
+  svg {
+    margin-right: getSpacing('1x');
+  }
+}

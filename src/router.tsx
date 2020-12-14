@@ -1,18 +1,27 @@
 import React from 'react';
+import { DEVELOPMENT_ENV } from 'src/constants/constants';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
-import Home from 'src/components/home';
+import Home from 'src/pages/home';
 import routes from 'src/constants/routes';
-import ComponentKit from 'src/pages/component-kit';
+import OnBoarding from 'src/pages/onboarding/index';
+import SuperAdminLogin from 'src/pages/super-admin-login';
+import DesignKitRoutes from './design-kit/design-kit-router';
+import CompanyAdminLogin from 'src/pages/company-admin-login';
+import CompanyAdminSignUp from 'src/pages/company-admin-sign-up';
+import EmailVerification from 'src/components/email-verification/email-verification';
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={routes.ROOT} component={Home} />
-        <Route path={routes.COMPONENT_KIT} component={ComponentKit} />
-        <Route path={routes.PAGE_NOT_FOUND} component={() => <div>PAGE_NOT_FOUND</div>} />
-        {/*TODO only enable component kit route for dev environment*/}
+        <Route path={routes.SUPER_ADMIN_LOGIN} component={SuperAdminLogin} />
+        <Route path={routes.LOGIN} component={CompanyAdminLogin} />
+        <Route path={routes.SIGN_UP} component={CompanyAdminSignUp} />
+        <Route path={routes.VERIFY_EMAIL} component={EmailVerification} />
+        <Route path={routes.ON_BOARDING} component={OnBoarding} />
+        {process.env.NODE_ENV === DEVELOPMENT_ENV && <Route path={routes.DESIGN_KIT} component={DesignKitRoutes} />}
+        <Route path={routes.ROOT} component={Home} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,18 +1,11 @@
 /**
  *
- * @param date
+ * @param dateString
  *
- * This function return the date string in the format of dd/MM/yyyy
- *
+ * return the date in formatted form like Sep 14, 2020"
  */
-export const formatDate = (date: string) => {
-  var d = new Date(date),
-    month = '' + (d.getMonth() + 1),
-    day = '' + d.getDate(),
-    year = d.getFullYear();
-
-  if (month.length < 2) month = '0' + month;
-  if (day.length < 2) day = '0' + day;
-
-  return [day, month, year].join('/');
+export const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
 };

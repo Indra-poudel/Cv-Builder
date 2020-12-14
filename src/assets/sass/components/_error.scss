@@ -1,0 +1,12 @@
+.error-list {
+  margin-bottom: getSpacing("4x");
+  li {
+    display: flex;
+    padding-top: getSpacing("2x");
+    padding-bottom: getSpacing("2x");
+    color: $error-color;
+    flex-direction: column;
+    text-align: left;
+    border-bottom: 1px solid $grey-light;
+  }
+}

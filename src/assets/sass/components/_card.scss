@@ -1,0 +1,26 @@
+
+.card {
+  border-radius: $card-radius;
+  background-color: getColor("white.base");
+  margin-bottom: getSpacing("8x");
+  @include m(elevated) {
+    box-shadow: $box-shadow;
+  }
+  @include m(scrollable) {
+    overflow: auto;
+  }
+  @include e(content) {
+    padding: getSpacing("4x");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include e(footer) {
+    padding: getSpacing("4x");
+    background-color: $bg-color;
+    border-top: 1px solid $grey-lighter;
+    border-radius: $card-radius-bottom;
+    display: flex;
+    justify-content: space-between;
+  }
+}

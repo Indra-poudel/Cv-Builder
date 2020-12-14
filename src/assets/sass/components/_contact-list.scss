@@ -1,0 +1,38 @@
+.contact__title {
+  .sidebar-floating__title span {
+    display: inline-flex;
+    align-items: center;
+  }
+  .contact__edit {
+    margin-left: getSpacing('2x');
+    font-size: getFontSize('smaller');
+    background: $primary-color;
+    height: getSpacing('5x');
+    width: getSpacing('5x');
+    color: $white;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.contact__detail {
+  border-top: 1px solid $grey-light;
+  border-bottom: 1px solid $grey-light;
+
+  .email {
+    color: $grey-dark;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.copy__contact {
+  color: getColor('grey.50');
+
+  &:hover {
+    color: $primary-color;
+  }
+}

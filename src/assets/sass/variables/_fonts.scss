@@ -1,0 +1,136 @@
+// Base font size
+$base__header__line: 1.25 !default;
+$base__body__line: 1.3 !default;
+$base__font-size: 1rem !default;
+
+// Custom font url
+$font-custom: "Avenir Next" !default;
+$font-icon-url: "https://fonts.googleapis.com/icon?family=Material+Icons" !default;
+$font-material: "Material Icons" !default;
+
+$typefaces: (
+  'Avenir-next-heavy': (
+    family: 'Avenir Next',
+    weight: 900,
+    style: normal
+  ),
+  'Avenir-next-demi': (
+    family: 'Avenir Next',
+    weight: 600,
+    style: normal
+  ),
+  'Avenir-next-bold': (
+    family: 'Avenir Next',
+    weight: bold,
+    style: normal
+  ),
+  'Avenir-next-medium': (
+    family: 'Avenir Next',
+    weight: 500,
+    style: italic
+  ),
+  'Avenir-next-regular': (
+    family: 'Avenir Next',
+    weight: normal,
+    style: normal
+  )
+);
+
+// Font Declaration
+$font-sans: $font-custom, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+ Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+sans-serif;
+$font-primary: $font-sans;
+$font-icon: $font-material;
+
+//font-weight
+$fontWeight: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "blaheavyck": 900,
+);
+
+$fontSize: (
+  "header": (
+    "h1": (
+      "font-size": 1.5rem,
+      "line-height": $base__header__line,
+    ),
+    "h2": (
+      "font-size": 1.5rem,
+      "line-height": $base__header__line,
+    ),
+    "h3": (
+      "font-size": 1rem,
+      "line-height": $base__header__line,
+    ),
+    "h4": (
+      "font-size": 0.8125rem,
+      "line-height": $base__header__line,
+    ),
+    "h5": (
+      "font-size": 0.75rem,
+      "line-height": $base__header__line,
+    ),
+    "h6": (
+      "font-size": 0.5rem,
+      "line-height": $base__header__line,
+    ),
+  ),
+  "font": (
+    "large": (
+      "font-size": 1.5rem,//24px
+      "line-height": $base__body__line,
+    ),
+    "body1": (
+      "font-size": 1.125rem,//18px
+      "line-height": $base__body__line,
+    ),
+    "body2": (
+      "font-size": 1rem,//16px
+      "line-height": $base__body__line,
+    ),
+    "small": (
+      "font-size": 0.8125rem,//13px
+      "line-height": $base__body__line,
+    ),
+    "smaller": (
+      "font-size": 0.625rem,//10px
+      "line-height": $base__body__line,
+    ),
+    "tiny": (
+      "font-size": 0.5rem,//8px
+      "line-height": $base__body__line,
+    ),
+  ),
+);
+
+$fontDecoration: (
+  "striked": line-through,
+  "underlined": underline,
+);
+
+$fontCase: (
+  "uppercase": uppercase,
+  "lowercase": lowercase,
+  "capitalized": capitalize,
+);
+
+$fontStyle: (
+  "normal": normal,
+  "italic": italic,
+  "oblique": oblique,
+);
+
+$textAlignment: (
+  "center": center,
+  "left": left,
+  "right": right,
+  "justified": justify,
+);

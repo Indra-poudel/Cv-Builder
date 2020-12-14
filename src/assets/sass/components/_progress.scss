@@ -1,0 +1,109 @@
+.stepper {
+    padding: 0;
+    margin: 1em -1.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    counter-reset: section;
+    li {
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      &:not(:last-child){
+        //@extend: .625rem;
+        transition: margin-bottom .4s;
+        &:after {
+          position: absolute;
+          top: 3.6rem;
+          left: 2.5rem;
+          width: 1px;
+          height: calc(100% - 33px);
+          content: "";
+          background-color: rgba(0,0,0,0.1);
+        }
+      }
+      .step-title {
+        padding: 1.5rem  1.5rem 0;
+        text-align: center;
+        .circle {
+          display: inline-block;
+          width: 2.0625rem;//33px;
+          height: 2.0625rem;
+          margin-right: 1.5rem;
+          line-height: 1.35rem;
+          color: $white;
+          text-align: center;
+          border-radius: 50%;
+          order: 1;
+          font-size: getFontSize("small");
+          background-color: getColor("grey.50") !important;
+          border: 6px solid $grey-light;
+        }
+        .label {
+          display: inline-block;
+          color: $grey-dark;
+          flex-flow: column nowrap;
+          order: 2;
+          margin-top: .2rem;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .step-content {
+        display: block;
+        padding: .94rem;
+        padding-left: 0;
+        margin-top: 0;
+        margin-left: 5rem;
+        color: $grey-dark;
+        font-weight:  getFontWeight("normal");
+        font-size: getFontSize("body2");
+        border-bottom: 1px solid $grey-light;
+        p {
+          font-size: 16px;
+        }
+        .step-content-links {
+          display: flex;
+          margin: getSpacing("6x") 0 getSpacing("4x") 0;
+          align-items: center;
+          .link-help {
+            color: $grey-dark;
+          }
+        }
+      }
+      &.active {
+        .step-title {
+          .label {
+            color: $grey-dark;
+          }
+          .circle {
+            background-color: getColor("grey.50") !important;
+          }
+        }
+      }
+      &.completed {
+        .step-title {
+          .label {
+            color: $grey-dark;
+          }
+          .circle {
+            background-color: getColor("grey.50") !important;
+          }
+        }
+      }
+      &.warning {
+        .step-title {
+          .circle {
+            background-color: $error-color !important;
+          }
+        }
+      }
+    }
+    &.stepper-vertical {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }

@@ -1,0 +1,77 @@
+.navbar {
+  background-color: getColor("white.base");
+  @include e(wrap) {
+    display: flex;
+    align-items: center;
+    height: $navbar-height;
+    @include m(content-spread) {
+      justify-content: space-between;
+    }
+  }
+  @include m(sticky) {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+  @include m(bordered-bottom) {
+    border-bottom: 1px solid $grey-lighter;
+  }
+  @include e(logo) {
+    width: 156px;
+    height: auto;
+    margin-right: getSpacing("8x");
+  }
+  @include e(left) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav {
+  display: flex;
+  @include e(node) {
+    padding: 0 getSpacing("4x");
+  }
+  @include e(link) {
+    display: flex;
+    align-items: center;
+    color: getColor("grey.50");
+    display: flex;
+    align-items: center;
+    @include getFontSize("body2");
+    font-weight: getFontWeight("normal");
+    &:hover {
+      font-weight:  getFontWeight("normal");
+    }
+    @include m(active) {
+      display: flex;
+      align-items: center;
+      color: getColor("primary.base");
+      font-weight: getFontWeight("bold");
+      &:hover {
+        font-weight:  getFontWeight("bold");
+      }
+    }
+    @include m(nav-text) {
+      padding-left: 8px;
+    }
+  }
+}
+.secondary-nav {
+  background-color: white;
+  @include e(wrap) {
+    height: 55px;
+    display: flex;
+    align-items: center;
+  }
+  @include e(nodes) {
+    margin: {
+      top: getSpacing("2x");
+      bottom: getSpacing("2x");
+      right: getSpacing("3x");
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

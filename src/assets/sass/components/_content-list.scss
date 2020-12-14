@@ -1,0 +1,82 @@
+.content-list {
+  width: 80%;
+  h2 {
+    margin-bottom: getSpacing("8x");
+  }
+  h4 {
+    margin-bottom: getSpacing("2x");
+    color: getColor("grey.50");
+  }
+  p {
+    font-size: getFontSize("small");
+    color: getColor("grey.50");
+  }
+  .sub-header{
+    text-transform: uppercase;
+  }
+}
+.list-block {
+  margin: getSpacing("2x") 0 getSpacing("8x");
+    font-size: getFontSize("body2");
+  @include e(row) {
+    padding: getSpacing("3x") 0;
+    margin: 0;
+    border-bottom: 1px solid $grey-light;
+    .col-last {
+      text-align: right;
+    }
+    .col-value {
+      font-weight:  getFontWeight("bold");
+    }
+  }
+  @include e(col) {
+    padding: 0;
+  }
+}
+.list-user {
+  padding-left: getSpacing('4x');
+  padding-right: 16px;
+  @include e(info) {
+    display: flex;
+    flex-direction: column;
+  }
+  .icon-large {
+    color: getColor("grey.50");
+  }
+  .cursor-hand {
+    transition: 0.1s;
+    &:hover {
+      color: $error-color;
+    }
+  }
+}
+
+.content-list-empty{
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  color: getColor('grey.50');
+}
+
+@include mqmax('lg') {
+  .content-list {
+    width: 100%;
+  }
+  .container {
+    max-width: 100% !important;
+  }
+  // .account-setting {
+  //   .list-block__row {
+  //     .col-8 {
+  //       flex: 0 0 62.66667%;
+  //       max-width: 62.66667%;
+  //     }
+  //     .col-2 {
+  //       flex: 0 0 18.66667%;
+  //       max-width: 18.66667%;
+  //     }
+  //   }
+  // }
+}

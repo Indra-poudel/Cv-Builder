@@ -1,0 +1,114 @@
+// ==========================================================================
+// Shame
+// If any code was written hastily to meet deadlines or in a hackish way then those
+// codes should be written in _shame.scss. Documentation of hack codes is encouraged.
+// Cleaning up the code in _shame.scss should be done at spare time. Find out whose code it is by
+// using: $ git blame _shame.scss
+// ==========================================================================
+
+.ReactVirtualized__Table__headerColumn {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 0.813rem;
+  color: $grey-dark;
+}
+
+.ReactVirtualized__Table__rowColumn.primary {
+  color: #8b46ff;
+  font-weight: 600;
+}
+
+.Component__Login__Google {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__fail {
+  color: #f82b60;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.component__adduserdialog {
+  width: 960px;
+  max-height: 100vh;
+}
+
+.csverror__dialog {
+  width: 553px;
+  height: 580px;
+}
+
+.success_Dialog {
+  height: 500px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.success_Dialog > p {
+  height: 200px;
+}
+
+.confirmataion__dialog > p {
+  height: 120px;
+}
+
+.confirmataion__dialog {
+  height: 200px;
+  width: 450px;
+  padding: 20px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.confirmation__dialog_button_wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.confirmation__dialog_button_wrapper > div {
+  padding-right: 20px;
+}
+
+.domainupload__dialog {
+  width: 553px;
+  height: 580px;
+}
+
+.block_btn {
+  display: block;
+}
+
+.domainmap__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.domainDialog_h2 {
+  width: 363px;
+  margin-bottom: 20px;
+}
+
+.loading__indicator {
+  width: 200px;
+}
+.ReactVirtualized__Table__headerColumn:first-of-type, .ReactVirtualized__Table__rowColumn:first-of-type {
+  margin-left: 30px;
+}
+.ReactVirtualized__Table__headerColumn, .ReactVirtualized__Table__rowColumn {
+  margin-right: 30px;
+}
+
+.w-100 {
+  width: 100%;
+}

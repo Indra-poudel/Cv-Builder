@@ -1,0 +1,174 @@
+.emailthread {
+  text-align: left;
+  @include e(subject) {
+    padding: getSpacing("2x") getSpacing("3x");
+    border-bottom: 1px solid $grey-light;
+    display: block;
+    .subject-list {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        display: inline-block;
+        margin-right: getSpacing("2x");
+        margin-bottom: getSpacing("2x");
+        .subject {
+          color: $grey-dark;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: getSpacing("2x") getSpacing("3x");
+          background: $bg-color;
+          border: 1px solid $grey-light;
+          border-radius: 4px;
+          font-size: getFontSize("small");
+          .icon {
+            margin-right: getSpacing("2x");
+            font-size: 16px;
+            color: getColor("primary.base");
+            line-height: 0.5;
+          }
+        }
+        &.sign {
+          border: 0;
+          background: transparent;
+          font-size: getFontSize("large");
+          padding: getSpacing("2x") getSpacing("1x");
+        }
+
+        &.active {
+          .subject{
+            color: getColor("primary.base");
+            border-color: getColor("primary.base");
+            background: getColor("purple.light");
+          }
+        }
+      }
+    }
+  }
+  @include e(content) {
+    display: flex;
+    .col-left {
+      width: 70%;
+      border-right: 1px solid $grey-light;
+      padding: getSpacing("2x") getSpacing("4x");
+    }
+    .email-list{
+      height: 60vh;
+      overflow-y: auto;
+    }
+    .col-right {
+      width: 30%;
+      height: 60vh;
+      overflow-y: auto;
+      background-color: $bg-color;
+    }
+  }
+}
+.email-list {
+  .email-block {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $grey-light;
+    margin-bottom: getSpacing("4x");
+    .email-profile {
+      display: block;
+      padding-right: getSpacing("3x");
+      .profile-initials {
+        width: 36px;
+        padding: getSpacing("3x");
+        background: getColor("primary.base");
+        border-radius: 100%;
+        color: $white;
+      }
+      .profile-icon {
+        font-size: 36px;
+        color: getColor("primary.base");
+      }
+    }
+    .email-message {
+      @include e(header) {
+        margin-bottom: getSpacing("4x");
+        .email-name {
+          display: block;
+          font-weight: getFontWeight("bold");
+          font-size: getFontSize("body2");
+        }
+        .email-date {
+          display: block;
+          font-size: getFontSize("small");
+          color:  getColor("grey.50");
+        }
+      }
+      @include e(content) {
+        word-break: break-all;
+        p {
+          margin-bottom: getSpacing("4x");
+        }
+      }
+    }
+  }
+}
+.attachment-block {
+  .attachment-header {
+    display: flex;
+    padding: getSpacing("3x");
+    border-bottom: 1px solid $grey-light;
+    .attachment-icon {
+      margin-right: getSpacing("2x");
+    }
+  }
+  .attachment-list {
+    ul {
+      li {
+        display: flex;
+        padding: getSpacing("4x") getSpacing("3x");
+        font-size: getFontSize("small");
+        background-color: $white;
+        border-bottom: 1px solid $grey-light;
+        .attachment-icon {
+          width: 10%;
+        }
+        .attachment-content {
+          font-size: getFontSize("small");
+          width: 85%;
+          .document-type {
+            display: block;
+            color: $grey-base;
+          }
+        }
+        .attachment-actions {
+          width: 10%;
+          padding: getSpacing("1x");
+          color: getColor("grey.50");
+          .action {
+            cursor: pointer;
+            color:  getColor("grey.50");
+            &:hover{
+              color: $primary-color;
+            }
+          }
+        }
+        &.document-pdf {
+          .attachment-icon {
+            color: getColor("tertiary-red.60");
+          }
+        }
+        &.document-word {
+          .attachment-icon {
+            color: getColor("tertiary-blue.60");
+          }
+        }
+        &.document-powerpoint {
+          .attachment-icon {
+            color: getColor("tertiary-yellow.60");
+          }
+        }
+        &.document-excel {
+          .attachment-icon {
+            color: getColor("tertiary-green.60");
+          }
+        }
+      }
+    }
+  }
+}
